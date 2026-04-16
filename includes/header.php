@@ -21,7 +21,7 @@ if (!isset($page_description)) {
 $current_page = basename($_SERVER['PHP_SELF']);
 
 // Canonical URL zusammensetzen
-$canonical_url = 'https://glas-povenz.de/' . $current_page;
+$canonical_url = 'https://glas-povenz.de/' . ($current_page === 'index.php' ? '' : $current_page);
 
 // XSS-sichere Ausgabe der Variablen
 $safe_title       = htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8');
@@ -46,12 +46,13 @@ $safe_canonical   = htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8');
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="<?= $safe_canonical ?>">
     <meta property="og:locale"      content="de_DE">
+    <meta property="og:image"       content="https://glas-povenz.de/images/og-image.jpg">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/css/style.css">
 
     <!-- Favicon (Platzhalter) -->
-    <link rel="icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -81,7 +82,7 @@ $safe_canonical   = htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8');
         <!-- Logo -->
         <a href="/index.php" class="nav__logo" aria-label="Glaserei Povenz – Startseite">
             <?php if (file_exists(__DIR__ . '/../images/logo.png')): ?>
-                <img src="/images/logo.png" alt="Glaserei Povenz Logo" width="160" height="50">
+                <img src="/images/logo.png" alt="Glaserei Povenz Logo" height="45" style="object-fit: contain;">
             <?php else: ?>
                 <span class="nav__logo-text">Glaserei Povenz</span>
             <?php endif; ?>
