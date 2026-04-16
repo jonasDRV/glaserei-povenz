@@ -75,6 +75,14 @@
   --transition-fast: 0.15s ease;
   --transition-base: 0.25s ease;
   --transition-slow: 0.40s ease;
+
+  /* Alert colors */
+  --color-error-bg:      #fdf1f1;
+  --color-error-border:  #e57373;
+  --color-error-text:    #7a2222;
+  --color-success-bg:    #f0fdf0;
+  --color-success-border:#81c784;
+  --color-success-text:  #1b5e20;
 }
 
 
@@ -130,7 +138,6 @@ textarea {
   font: inherit;
   border: none;
   background: none;
-  outline: none;
 }
 
 button {
@@ -718,14 +725,12 @@ strong {
 .ueber-uns__image::after {
   content: '';
   position: absolute;
-  bottom: -var(--space-4);
-  right: -var(--space-4);
+  bottom: calc(-1 * var(--space-4));
+  right: calc(-1 * var(--space-4));
   width: 60%;
   height: 60%;
   border: 3px solid var(--color-accent);
   z-index: -1;
-  bottom: -16px;
-  right: -16px;
 }
 
 
@@ -819,7 +824,7 @@ strong {
 
 .rezension-card__source {
   font-size: var(--text-xs);
-  color: var(--color-border);
+  color: var(--color-text-light);
   margin-top: var(--space-1);
 }
 
@@ -922,7 +927,7 @@ strong {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: var(--color-border);
+  color: var(--color-text-light);
 }
 
 .form-group textarea {
@@ -965,7 +970,6 @@ strong {
   top: -9999px;
   opacity: 0;
   pointer-events: none;
-  tab-index: -1;
 }
 
 .form-note {
@@ -980,7 +984,7 @@ strong {
    ============================================================================= */
 
 .footer {
-  background-color: #1a1a18;
+  background-color: var(--color-text);
   color: rgba(255, 255, 255, 0.78);
   padding-top: var(--space-16);
   padding-bottom: 0;
@@ -1091,7 +1095,7 @@ strong {
   left: 0;
   right: 0;
   z-index: 9999;
-  background-color: #1a1a18;
+  background-color: var(--color-text);
   border-top: 2px solid var(--color-accent);
   color: var(--color-white);
   /* Hidden by default */
@@ -1106,7 +1110,7 @@ strong {
 .cookie-banner.is-visible {
   transform: translateY(0);
   opacity: 1;
-  pointer-events: all;
+  pointer-events: auto;
 }
 
 .cookie-banner__inner {
@@ -1254,7 +1258,7 @@ strong {
 }
 
 .faq-item.is-open .faq-item__answer {
-  max-height: 400px;
+  max-height: 1000px;
 }
 
 
@@ -1386,15 +1390,15 @@ strong {
 }
 
 .alert--error {
-  background-color: #fdf1f1;
-  border-left-color: #c0392b;
-  color: #7a2222;
+  background-color: var(--color-error-bg);
+  border-left-color: var(--color-error-border);
+  color: var(--color-error-text);
 }
 
 .alert--success {
-  background-color: var(--color-primary-light);
-  border-left-color: var(--color-primary);
-  color: var(--color-primary-dark);
+  background-color: var(--color-success-bg);
+  border-left-color: var(--color-success-border);
+  color: var(--color-success-text);
 }
 
 
@@ -1655,6 +1659,23 @@ strong {
     width: 100%;
     text-align: center;
   }
+}
+
+
+/* ===== ACCESSIBILITY: REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+    html {
+        scroll-behavior: auto;
+    }
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 
