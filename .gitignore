@@ -1,0 +1,12 @@
+# Konfiguration mit Zugangsdaten
+config.php
+
+# PHPMailer (kann über curl neu geladen werden)
+vendor/
+
+# System-Dateien
+.DS_Store
+Thumbs.db
+
+# Test-E-Mail (temporär)
+test-email.txt
