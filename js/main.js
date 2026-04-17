@@ -13,7 +13,7 @@ const COOKIE_KEY = 'maps_consent';
 
 function initCookieBanner() {
     const consent = localStorage.getItem(COOKIE_KEY);
-    if (consent === null || consent === undefined) {
+    if (consent === null) {
         const banner = document.getElementById('cookieBanner');
         if (banner) {
             banner.classList.add('is-visible');
@@ -50,6 +50,7 @@ function loadAllMaps() {
             return;
         }
         const src = wrapper.getAttribute('data-maps-src');
+        if (!src) return;
         const iframe = document.createElement('iframe');
         iframe.src = src;
         iframe.title = 'Glaserei Povenz auf Google Maps';
@@ -169,9 +170,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initReveal();
     initFaq();
 
+    // Cache nav element before scroll listener
+    const nav = document.querySelector('.nav');
+
     // Scroll listener for nav backdrop blur
     window.addEventListener('scroll', function() {
-        const nav = document.querySelector('.nav');
         if (nav) {
             nav.classList.toggle('nav--scrolled', window.scrollY > 20);
         }
