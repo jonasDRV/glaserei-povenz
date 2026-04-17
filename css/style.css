@@ -493,14 +493,14 @@ strong {
 
 .hero {
   position: relative;
-  min-height: 620px;
+  min-height: 700px;
   display: flex;
   align-items: center;
   background-color: var(--color-primary-dark);
   /* Background image is set inline or via a modifier class */
   background-size: cover;
-  /* 25% Y-Offset: zeigt das Schild über dem Schaufenster */
-  background-position: center 25%;
+  /* -20% Y: Schild über dem Schaufenster vollständig sichtbar */
+  background-position: center -20%;
   overflow: hidden;
   padding-top: var(--nav-height);
 }
@@ -1634,9 +1634,9 @@ select:focus-visible,
 
   /* Hero */
   .hero {
-    min-height: 520px;
+    min-height: 580px;
     padding-inline: var(--space-6);
-    background-position: center 20%;
+    background-position: center -10%;
   }
 
   .hero__title {
@@ -1739,8 +1739,8 @@ select:focus-visible,
 
   /* Hero */
   .hero {
-    min-height: 460px;
-    background-position: center 18%;
+    min-height: 500px;
+    background-position: center -5%;
   }
 
   .hero__title {
