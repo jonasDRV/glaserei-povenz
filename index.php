@@ -187,43 +187,53 @@ include 'includes/header.php';
     <div class="container">
         <h2 class="section-title" id="rez-title">Was unsere Kunden sagen</h2>
 
-        <div class="rezensionen-grid">
+        <div class="rezensionen-slider" aria-label="Kundenbewertungen">
+            <div class="rezensionen-track-wrapper">
+                <div class="rezensionen-track">
 
-            <div class="rezension-card reveal">
-                <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-                <p class="rezension-card__text"><em>„Passgenaue Arbeit, superschnell erledigt, dazu noch sehr nettes Gespräch, was will man mehr?"</em></p>
-                <p class="rezension-card__author">Harald Weber</p>
-                <p class="rezension-card__source">Google Rezension · Local Guide</p>
+                    <div class="rezension-card">
+                        <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                        <p class="rezension-card__text"><em>„Passgenaue Arbeit, superschnell erledigt, dazu noch sehr nettes Gespräch, was will man mehr?"</em></p>
+                        <p class="rezension-card__author">Harald Weber</p>
+                        <p class="rezension-card__source">Google Rezension · Local Guide</p>
+                    </div>
+
+                    <div class="rezension-card">
+                        <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                        <p class="rezension-card__text"><em>„Herr Povenz hat in kurzer Zeit alle Scheiben in unserem EFH ausgetauscht. Alle Termine und Absprachen wurden perfekt eingehalten. Sehr empfehlenswerter Betrieb!"</em></p>
+                        <p class="rezension-card__author">Gerald Nitzl</p>
+                        <p class="rezension-card__source">Google Rezension · Local Guide</p>
+                    </div>
+
+                    <div class="rezension-card">
+                        <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                        <p class="rezension-card__text"><em>„Herr Povenz ist bei meinem nicht mehr korrekt schließenden Fenster sehr zügig (innerhalb eines Tages!) vorbei gekommen und hat das Problem vor Ort behoben. Sehr freundlicher Kontakt, der Service war wirklich top!"</em></p>
+                        <p class="rezension-card__author">Blueberry Dragon</p>
+                        <p class="rezension-card__source">Google Rezension</p>
+                    </div>
+
+                    <div class="rezension-card">
+                        <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                        <p class="rezension-card__text"><em>„Super Service und schnelle Bearbeitung."</em></p>
+                        <p class="rezension-card__author">Manuel Wildgans</p>
+                        <p class="rezension-card__source">Google Rezension · Local Guide</p>
+                    </div>
+
+                    <div class="rezension-card">
+                        <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                        <p class="rezension-card__text"><em>„Superschnelle Erledigung der Reparatur, gute Arbeit, fairer Preis."</em></p>
+                        <p class="rezension-card__author">Manfred Oppitz</p>
+                        <p class="rezension-card__source">Google Rezension</p>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="rezension-card reveal">
-                <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-                <p class="rezension-card__text"><em>„Herr Povenz hat in kurzer Zeit alle Scheiben in unserem EFH ausgetauscht. Alle Termine und Absprachen wurden perfekt eingehalten. Sehr empfehlenswerter Betrieb!"</em></p>
-                <p class="rezension-card__author">Gerald Nitzl</p>
-                <p class="rezension-card__source">Google Rezension · Local Guide</p>
+            <div class="rezensionen-controls">
+                <button class="rezensionen-btn rezensionen-btn--prev" aria-label="Vorherige Rezension">&#8592;</button>
+                <div class="rezensionen-dots" role="group" aria-label="Rezensionen-Navigation"></div>
+                <button class="rezensionen-btn rezensionen-btn--next" aria-label="Nächste Rezension">&#8594;</button>
             </div>
-
-            <div class="rezension-card reveal">
-                <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-                <p class="rezension-card__text"><em>„Herr Povenz ist bei meinem nicht mehr korrekt schließenden Fenster sehr zügig (innerhalb eines Tages!) vorbei gekommen und hat das Problem vor Ort behoben. Sehr freundlicher Kontakt, der Service war wirklich top!"</em></p>
-                <p class="rezension-card__author">Blueberry Dragon</p>
-                <p class="rezension-card__source">Google Rezension</p>
-            </div>
-
-            <div class="rezension-card reveal">
-                <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-                <p class="rezension-card__text"><em>„Super Service und schnelle Bearbeitung."</em></p>
-                <p class="rezension-card__author">Manuel Wildgans</p>
-                <p class="rezension-card__source">Google Rezension · Local Guide</p>
-            </div>
-
-            <div class="rezension-card reveal">
-                <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-                <p class="rezension-card__text"><em>„Superschnelle Erledigung der Reparatur, gute Arbeit, fairer Preis."</em></p>
-                <p class="rezension-card__author">Manfred Oppitz</p>
-                <p class="rezension-card__source">Google Rezension</p>
-            </div>
-
         </div>
     </div>
 </section>

@@ -780,10 +780,73 @@ strong {
    11. REVIEW CARDS (Rezensionen)
    ============================================================================= */
 
-.rezensionen-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+/* Slider wrapper */
+.rezensionen-slider {
+  position: relative;
+}
+
+.rezensionen-track-wrapper {
+  overflow: hidden;
+}
+
+.rezensionen-track {
+  display: flex;
   gap: var(--space-6);
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Controls row */
+.rezensionen-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.rezensionen-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.rezensionen-btn:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Dot indicators */
+.rezensionen-dots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.rezensionen-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-border);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.rezensionen-dot.is-active {
+  background: var(--color-primary);
+  transform: scale(1.3);
 }
 
 .rezension-card {
@@ -1669,11 +1732,6 @@ strong {
 
   .leistung-card {
     padding: var(--space-5) var(--space-4);
-  }
-
-  /* Reviews → 1 col */
-  .rezensionen-grid {
-    grid-template-columns: 1fr;
   }
 
   /* Gallery → 1 col on small mobile */
