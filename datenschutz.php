@@ -16,7 +16,7 @@ include 'includes/header.php';
         <h2>1. Verantwortlicher</h2>
         <p style="margin-bottom:2rem">
             Glaserei Povenz<br>
-            [Vollständiger Name des Inhabers]<br>
+            Andreas Povenz<br>
             Talstr. 41, 95100 Selb<br>
             Telefon: 09287 / 4428<br>
             E-Mail: povenz@t-online.de

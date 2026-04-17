@@ -18,7 +18,7 @@ include 'includes/header.php';
             <strong>Glaserei Povenz</strong><br>
             Talstr. 41<br>
             95100 Selb<br><br>
-            Inhaber: [Vollständiger Name des Inhabers eintragen]<br><br>
+            Inhaber: Andreas Povenz<br><br>
             Telefon: <a href="tel:+4992874428">09287 / 4428</a><br>
             E-Mail: <a href="mailto:povenz@t-online.de">povenz@t-online.de</a>
         </p>
