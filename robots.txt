@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /contact-handler.php
+Disallow: /includes/
+Disallow: /vendor/
+
+Sitemap: https://glas-povenz.de/sitemap.xml
