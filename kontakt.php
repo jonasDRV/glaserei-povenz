@@ -3,6 +3,11 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
+
+// Session-Flash für Formularfelder nach Fehler
+$form_flash = $_SESSION['form_flash'] ?? [];
+unset($_SESSION['form_flash']); // einmalig lesen
+
 $page_title = 'Kontakt – Glaserei Povenz Selb';
 $page_description = 'Kontaktieren Sie die Glaserei Povenz in Selb. Kontaktformular, Telefon, E-Mail und Anfahrt zur Werkstatt.';
 include 'includes/header.php';
@@ -57,31 +62,31 @@ $form_error = isset($_GET['error']) ? htmlspecialchars($_GET['error'], ENT_QUOTE
                     <div class="form-group">
                         <label for="name">Name <span aria-hidden="true" style="color: var(--color-error-text);">*</span></label>
                         <input type="text" id="name" name="name" required autocomplete="name"
-                               placeholder="Ihr vollständiger Name" value="<?= htmlspecialchars($_GET['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                               placeholder="Ihr vollständiger Name" value="<?= htmlspecialchars($form_flash['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="email">E-Mail-Adresse <span aria-hidden="true" style="color: var(--color-error-text);">*</span></label>
                         <input type="email" id="email" name="email" required autocomplete="email"
-                               placeholder="ihre@email.de" value="<?= htmlspecialchars($_GET['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                               placeholder="ihre@email.de" value="<?= htmlspecialchars($form_flash['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="telefon">Telefon <span style="color: var(--color-text-light); font-weight: 400;">(optional)</span></label>
                         <input type="tel" id="telefon" name="telefon" autocomplete="tel"
-                               placeholder="z. B. 09287 / 1234" value="<?= htmlspecialchars($_GET['telefon'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                               placeholder="z. B. 09287 / 1234" value="<?= htmlspecialchars($form_flash['telefon'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="betreff">Betreff <span aria-hidden="true" style="color: var(--color-error-text);">*</span></label>
                         <input type="text" id="betreff" name="betreff" required
-                               placeholder="Worum geht es?" value="<?= htmlspecialchars($_GET['betreff'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                               placeholder="Worum geht es?" value="<?= htmlspecialchars($form_flash['betreff'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="nachricht">Nachricht <span aria-hidden="true" style="color: var(--color-error-text);">*</span></label>
                         <textarea id="nachricht" name="nachricht" required
-                                  placeholder="Beschreiben Sie Ihr Anliegen..."><?= htmlspecialchars($_GET['nachricht'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
+                                  placeholder="Beschreiben Sie Ihr Anliegen..."><?= htmlspecialchars($form_flash['nachricht'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
                     </div>
 
                     <div class="form-group form-group--checkbox">

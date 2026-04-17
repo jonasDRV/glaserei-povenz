@@ -11,8 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // Hilfsfunktion: Redirect mit Fehlermeldung
 function fail(string $reason, array $fields = []): void {
-    $query = http_build_query(array_merge(['error' => $reason], $fields));
-    header('Location: /kontakt.php?' . $query);
+    if (!empty($fields)) {
+        $_SESSION['form_flash'] = $fields;
+    }
+    header('Location: /kontakt.php?error=' . urlencode($reason));
     exit;
 }
 
@@ -34,11 +36,14 @@ if (!empty($_POST['website'])) {
 
 // Eingaben lesen und bereinigen
 $name      = trim(strip_tags($_POST['name'] ?? ''));
-$email     = trim($_POST['email'] ?? '');
+$email     = trim(strip_tags($_POST['email'] ?? ''));
 $telefon   = trim(strip_tags($_POST['telefon'] ?? ''));
 $betreff   = trim(strip_tags($_POST['betreff'] ?? ''));
 $nachricht = trim(strip_tags($_POST['nachricht'] ?? ''));
 $datenschutz = $_POST['datenschutz'] ?? '';
+
+// Header-Injection-Schutz: Zeilenumbrüche aus Name entfernen
+$name = str_replace(["\r", "\n"], '', $name);
 
 // Pflichtfelder prüfen
 if (empty($name) || empty($email) || empty($betreff) || empty($nachricht) || empty($datenschutz)) {
@@ -110,7 +115,6 @@ try {
     $body .= "Nachricht:\n" . $nachricht . "\n\n";
     $body .= $divider . "\n";
     $body .= "Gesendet am: " . date('d.m.Y H:i') . " Uhr\n";
-    $body .= "IP-Adresse:  " . ($_SERVER['REMOTE_ADDR'] ?? 'unbekannt') . "\n";
 
     $mail->Body = $body;
 
