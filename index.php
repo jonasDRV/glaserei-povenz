@@ -34,12 +34,8 @@ include 'includes/header.php';
     {"@type": "City", "name": "Marktredwitz"},
     {"@type": "AdministrativeArea", "name": "Fichtelgebirge"}
   ],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "08:00",
-    "closes": "17:00"
-  },
+  "openingHours": "Mo-Fr 08:00-17:00",
+  "hasMap": "https://maps.google.com/?q=Glaserei+Povenz+Selb",
   "priceRange": "€€"
 }
 </script>
@@ -47,10 +43,10 @@ include 'includes/header.php';
 <!-- =============================================
      SECTION 1: HERO
      ============================================= -->
-<section class="hero">
+<section class="hero" aria-labelledby="hero-title">
     <div class="container">
         <div class="hero__content reveal">
-            <h1 class="hero__title">Ihr Glasermeister<br>aus Selb</h1>
+            <h1 class="hero__title" id="hero-title">Ihr Glasermeister<br>aus Selb</h1>
             <p class="hero__subtitle">Professionelle Glasarbeiten für Privat- und Gewerbekunden im Fichtelgebirge und Umgebung.</p>
             <div class="hero__cta">
                 <a href="/kontakt.php" class="btn btn--primary">Jetzt Kontakt aufnehmen</a>
@@ -139,11 +135,11 @@ include 'includes/header.php';
 
                 <div class="ueber-uns__stats">
                     <div class="stat-box">
-                        <span class="stat-box__value">60 km</span>
+                        <span class="stat-box__number">60 km</span>
                         <span class="stat-box__label">Einzugsgebiet</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-box__value">9+</span>
+                        <span class="stat-box__number">9+</span>
                         <span class="stat-box__label">Leistungsbereiche</span>
                     </div>
                 </div>
