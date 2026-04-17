@@ -123,7 +123,8 @@ $form_error = isset($_GET['error']) ? htmlspecialchars($_GET['error'], ENT_QUOTE
                     <div>
                         <strong>Telefon</strong>
                         <p style="color: var(--color-text-light); margin-top: 0.25rem;">
-                            <a href="tel:+4992874428">09287 / 4428</a>
+                            <a href="tel:+4992874428">09287 / 4428</a><br>
+                            <a href="tel:+4917016954937">0170 / 169 54 37</a> (Mobil)
                         </p>
                     </div>
                 </div>
@@ -142,9 +143,9 @@ $form_error = isset($_GET['error']) ? htmlspecialchars($_GET['error'], ENT_QUOTE
                     <span class="kontakt-info__icon" aria-hidden="true">🕐</span>
                     <div>
                         <strong>Öffnungszeiten</strong>
-                        <p style="color: var(--color-text-light); margin-top: 0.25rem;">Mo – Fr: 08:00 – 17:00 Uhr</p>
-                        <p style="color: var(--color-text-light); font-size: var(--text-sm); margin-top: 0.25rem;">
-                            ⚠️ Öffnungszeiten bitte bestätigen und anpassen.
+                        <p style="color: var(--color-text-light); margin-top: 0.25rem;">
+                            Mo – Fr: 08:00 – 17:00 Uhr<br>
+                            Sa: 09:00 – 12:00 Uhr
                         </p>
                     </div>
                 </div>

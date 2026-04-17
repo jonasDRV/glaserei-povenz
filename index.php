@@ -34,7 +34,7 @@ include 'includes/header.php';
     {"@type": "City", "name": "Marktredwitz"},
     {"@type": "AdministrativeArea", "name": "Fichtelgebirge"}
   ],
-  "openingHours": "Mo-Fr 08:00-17:00",
+  "openingHours": ["Mo-Fr 08:00-17:00", "Sa 09:00-12:00"],
   "hasMap": "https://maps.google.com/?q=Glaserei+Povenz+Selb",
   "priceRange": "€€"
 }
