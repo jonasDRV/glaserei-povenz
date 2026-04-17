@@ -223,8 +223,7 @@ include 'includes/header.php';
         <h2 class="section-title" id="standort-title">Unser Standort</h2>
         <p style="text-align: center; margin-bottom: 1.5rem;">Glaserei Povenz · Talstr. 41 · 95100 Selb</p>
 
-        <!-- TODO: Replace PLACEHOLDER_MAPS_URL with actual Google Maps embed URL -->
-        <div class="maps-wrapper" data-maps-src="PLACEHOLDER_MAPS_URL">
+        <div class="maps-wrapper" data-maps-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2555.6061897495424!2d12.125557777004007!3d50.16850137153979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a0fda9e679ceb1%3A0xd3c1af87fdff600a!2sGlaserei%20Povenz%20UG!5e0!3m2!1sde!2ses!4v1776445812562!5m2!1sde!2ses">
             <div class="maps-placeholder">
                 <span style="font-size: 3rem;">🗺️</span>
                 <p>Zur Anzeige der Karte stimmen Sie bitte der Nutzung von Google Maps zu. Dabei werden Daten an Google LLC übertragen.</p>
