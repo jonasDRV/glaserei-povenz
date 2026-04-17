@@ -191,28 +191,40 @@ include 'includes/header.php';
 
             <div class="rezension-card reveal">
                 <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-                <p class="rezension-card__text"><em>„Sehr zuverlässige und saubere Arbeit. Die Duschkabine wurde genau nach unseren Wünschen eingebaut. Absolut empfehlenswert!"</em></p>
-                <p class="rezension-card__author">Thomas K.</p>
+                <p class="rezension-card__text"><em>„Passgenaue Arbeit, superschnell erledigt, dazu noch sehr nettes Gespräch, was will man mehr?"</em></p>
+                <p class="rezension-card__author">Harald Weber</p>
+                <p class="rezension-card__source">Google Rezension · Local Guide</p>
+            </div>
+
+            <div class="rezension-card reveal">
+                <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                <p class="rezension-card__text"><em>„Herr Povenz hat in kurzer Zeit alle Scheiben in unserem EFH ausgetauscht. Alle Termine und Absprachen wurden perfekt eingehalten. Sehr empfehlenswerter Betrieb!"</em></p>
+                <p class="rezension-card__author">Gerald Nitzl</p>
+                <p class="rezension-card__source">Google Rezension · Local Guide</p>
+            </div>
+
+            <div class="rezension-card reveal">
+                <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                <p class="rezension-card__text"><em>„Herr Povenz ist bei meinem nicht mehr korrekt schließenden Fenster sehr zügig (innerhalb eines Tages!) vorbei gekommen und hat das Problem vor Ort behoben. Sehr freundlicher Kontakt, der Service war wirklich top!"</em></p>
+                <p class="rezension-card__author">Blueberry Dragon</p>
                 <p class="rezension-card__source">Google Rezension</p>
             </div>
 
             <div class="rezension-card reveal">
                 <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-                <p class="rezension-card__text"><em>„Schnelle Reparatur nach Glasbruch, fairer Preis und freundlicher Service. Kommen immer wieder gerne!"</em></p>
-                <p class="rezension-card__author">Maria S.</p>
-                <p class="rezension-card__source">Google Rezension</p>
+                <p class="rezension-card__text"><em>„Super Service und schnelle Bearbeitung."</em></p>
+                <p class="rezension-card__author">Manuel Wildgans</p>
+                <p class="rezension-card__source">Google Rezension · Local Guide</p>
             </div>
 
             <div class="rezension-card reveal">
                 <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-                <p class="rezension-card__text"><em>„Tolle Beratung und professionelle Umsetzung. Der Spiegel passt perfekt ins Bad. Danke!"</em></p>
-                <p class="rezension-card__author">Klaus M.</p>
+                <p class="rezension-card__text"><em>„Superschnelle Erledigung der Reparatur, gute Arbeit, fairer Preis."</em></p>
+                <p class="rezension-card__author">Manfred Oppitz</p>
                 <p class="rezension-card__source">Google Rezension</p>
             </div>
 
         </div>
-
-        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem; opacity: 0.7;">⚠️ Bitte echte Google-Rezensionen eintragen.</p>
     </div>
 </section>
 
