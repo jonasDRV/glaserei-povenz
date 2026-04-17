@@ -161,116 +161,7 @@ function initFaq() {
 }
 
 /* ──────────────────────────────────────────────
-   5. Rezensionen Carousel
-────────────────────────────────────────────── */
-
-function initReviewSlider() {
-    var slider = document.querySelector('.rezensionen-slider');
-    if (!slider) return;
-
-    var track      = slider.querySelector('.rezensionen-track');
-    var cards      = Array.from(track.children);
-    var dotsWrap   = slider.querySelector('.rezensionen-dots');
-    var btnPrev    = slider.querySelector('.rezensionen-btn--prev');
-    var btnNext    = slider.querySelector('.rezensionen-btn--next');
-    var GAP        = 24; // matches --space-6
-    var current    = 0;
-    var perView    = 3;
-    var autoTimer  = null;
-
-    function getPerView() {
-        if (window.innerWidth < 640)  return 1;
-        if (window.innerWidth < 1024) return 2;
-        return 3;
-    }
-
-    function maxIndex() {
-        return Math.max(0, cards.length - perView);
-    }
-
-    function applyCardWidths() {
-        perView = getPerView();
-        var containerW = track.parentElement.offsetWidth;
-        var cardW = (containerW - GAP * (perView - 1)) / perView;
-        cards.forEach(function(c) {
-            c.style.width    = cardW + 'px';
-            c.style.minWidth = cardW + 'px';
-        });
-    }
-
-    function buildDots() {
-        if (!dotsWrap) return;
-        dotsWrap.innerHTML = '';
-        for (var i = 0; i <= maxIndex(); i++) {
-            var dot = document.createElement('button');
-            dot.className = 'rezensionen-dot' + (i === current ? ' is-active' : '');
-            dot.setAttribute('aria-label', 'Rezension ' + (i + 1));
-            (function(idx) {
-                dot.addEventListener('click', function() { goTo(idx); startAuto(); });
-            })(i);
-            dotsWrap.appendChild(dot);
-        }
-    }
-
-    function updateDots() {
-        if (!dotsWrap) return;
-        Array.from(dotsWrap.children).forEach(function(dot, i) {
-            dot.classList.toggle('is-active', i === current);
-        });
-    }
-
-    function goTo(index, skipTransition) {
-        current = Math.max(0, Math.min(index, maxIndex()));
-        var offset = current * (cards[0].offsetWidth + GAP);
-        if (skipTransition) track.style.transition = 'none';
-        track.style.transform = 'translateX(-' + offset + 'px)';
-        if (skipTransition) {
-            track.offsetHeight; // force reflow
-            track.style.transition = '';
-        }
-        updateDots();
-    }
-
-    function next() {
-        goTo(current < maxIndex() ? current + 1 : 0);
-    }
-
-    function prev() {
-        goTo(current > 0 ? current - 1 : maxIndex());
-    }
-
-    function startAuto() {
-        stopAuto();
-        autoTimer = setInterval(next, 5000);
-    }
-
-    function stopAuto() {
-        clearInterval(autoTimer);
-    }
-
-    if (btnNext) btnNext.addEventListener('click', function() { next(); startAuto(); });
-    if (btnPrev) btnPrev.addEventListener('click', function() { prev(); startAuto(); });
-
-    slider.addEventListener('mouseenter', stopAuto);
-    slider.addEventListener('mouseleave', startAuto);
-    slider.addEventListener('focusin',    stopAuto);
-    slider.addEventListener('focusout',   startAuto);
-
-    window.addEventListener('resize', function() {
-        applyCardWidths();
-        if (current > maxIndex()) current = maxIndex();
-        buildDots();
-        goTo(current, true);
-    });
-
-    applyCardWidths();
-    buildDots();
-    goTo(0, true);
-    startAuto();
-}
-
-/* ──────────────────────────────────────────────
-   6. Init on DOMContentLoaded
+   5. Init on DOMContentLoaded
 ────────────────────────────────────────────── */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -278,7 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initNav();
     initReveal();
     initFaq();
-    initReviewSlider();
 
     // Cache nav element before scroll listener
     const nav = document.querySelector('.nav');

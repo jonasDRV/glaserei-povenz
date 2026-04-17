@@ -191,6 +191,7 @@ include 'includes/header.php';
             <div class="rezensionen-track-wrapper">
                 <div class="rezensionen-track">
 
+                    <!-- Original set -->
                     <div class="rezension-card">
                         <div class="rezension-card__stars" aria-label="5 von 5 Sternen">★★★★★</div>
                         <p class="rezension-card__text"><em>„Passgenaue Arbeit, superschnell erledigt, dazu noch sehr nettes Gespräch, was will man mehr?"</em></p>
@@ -226,13 +227,43 @@ include 'includes/header.php';
                         <p class="rezension-card__source">Google Rezension</p>
                     </div>
 
-                </div>
-            </div>
+                    <!-- Duplicate set for seamless loop (aria-hidden so screen readers skip) -->
+                    <div class="rezension-card" aria-hidden="true">
+                        <div class="rezension-card__stars">★★★★★</div>
+                        <p class="rezension-card__text"><em>„Passgenaue Arbeit, superschnell erledigt, dazu noch sehr nettes Gespräch, was will man mehr?"</em></p>
+                        <p class="rezension-card__author">Harald Weber</p>
+                        <p class="rezension-card__source">Google Rezension · Local Guide</p>
+                    </div>
 
-            <div class="rezensionen-controls">
-                <button class="rezensionen-btn rezensionen-btn--prev" aria-label="Vorherige Rezension">&#8592;</button>
-                <div class="rezensionen-dots" role="group" aria-label="Rezensionen-Navigation"></div>
-                <button class="rezensionen-btn rezensionen-btn--next" aria-label="Nächste Rezension">&#8594;</button>
+                    <div class="rezension-card" aria-hidden="true">
+                        <div class="rezension-card__stars">★★★★★</div>
+                        <p class="rezension-card__text"><em>„Herr Povenz hat in kurzer Zeit alle Scheiben in unserem EFH ausgetauscht. Alle Termine und Absprachen wurden perfekt eingehalten. Sehr empfehlenswerter Betrieb!"</em></p>
+                        <p class="rezension-card__author">Gerald Nitzl</p>
+                        <p class="rezension-card__source">Google Rezension · Local Guide</p>
+                    </div>
+
+                    <div class="rezension-card" aria-hidden="true">
+                        <div class="rezension-card__stars">★★★★★</div>
+                        <p class="rezension-card__text"><em>„Herr Povenz ist bei meinem nicht mehr korrekt schließenden Fenster sehr zügig (innerhalb eines Tages!) vorbei gekommen und hat das Problem vor Ort behoben. Sehr freundlicher Kontakt, der Service war wirklich top!"</em></p>
+                        <p class="rezension-card__author">Blueberry Dragon</p>
+                        <p class="rezension-card__source">Google Rezension</p>
+                    </div>
+
+                    <div class="rezension-card" aria-hidden="true">
+                        <div class="rezension-card__stars">★★★★★</div>
+                        <p class="rezension-card__text"><em>„Super Service und schnelle Bearbeitung."</em></p>
+                        <p class="rezension-card__author">Manuel Wildgans</p>
+                        <p class="rezension-card__source">Google Rezension · Local Guide</p>
+                    </div>
+
+                    <div class="rezension-card" aria-hidden="true">
+                        <div class="rezension-card__stars">★★★★★</div>
+                        <p class="rezension-card__text"><em>„Superschnelle Erledigung der Reparatur, gute Arbeit, fairer Preis."</em></p>
+                        <p class="rezension-card__author">Manfred Oppitz</p>
+                        <p class="rezension-card__source">Google Rezension</p>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
