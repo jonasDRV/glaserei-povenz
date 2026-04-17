@@ -75,25 +75,36 @@ function initNav() {
 
     if (!toggle || !navLinks) return;
 
-    toggle.addEventListener('click', function() {
-        const isOpen = navLinks.classList.toggle('is-open');
+    function setOpen(isOpen) {
+        navLinks.classList.toggle('is-open', isOpen);
         toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        toggle.setAttribute('aria-label', isOpen ? 'Navigation schließen' : 'Navigation öffnen');
+    }
+
+    toggle.addEventListener('click', function() {
+        setOpen(!navLinks.classList.contains('is-open'));
     });
 
     // Close menu when any nav link is clicked
     navLinks.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
-            navLinks.classList.remove('is-open');
-            toggle.setAttribute('aria-expanded', 'false');
+            setOpen(false);
         });
     });
 
-    // Close menu on Escape key
+    // Close menu on Escape key + return focus to toggle
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && navLinks.classList.contains('is-open')) {
-            navLinks.classList.remove('is-open');
-            toggle.setAttribute('aria-expanded', 'false');
+            setOpen(false);
+            toggle.focus();
         }
+    });
+
+    // Close menu when clicking outside of nav
+    document.addEventListener('click', function(e) {
+        if (!navLinks.classList.contains('is-open')) return;
+        if (e.target.closest('.nav')) return;
+        setOpen(false);
     });
 }
 

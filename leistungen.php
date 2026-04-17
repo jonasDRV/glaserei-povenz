@@ -4,6 +4,46 @@ $page_description = 'Alle Glaserleistungen der Glaserei Povenz in Selb: Fensterg
 include 'includes/header.php';
 ?>
 
+<!-- BreadcrumbList + FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://glas-povenz.de/"},
+    {"@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://glas-povenz.de/leistungen.php"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kommen Sie auch zu uns nach Hause?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja. Wir sind im gesamten Umkreis von ca. 60 km rund um Selb tätig – darunter Rehau, Hof, Marktredwitz, Wunsiedel und weitere Orte im Fichtelgebirge."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wie schnell können Sie einen Glasbruch reparieren?",
+      "acceptedAnswer": {"@type": "Answer", "text": "In dringenden Fällen versuchen wir, noch am gleichen oder nächsten Werktag vorbeizukommen. Kontaktieren Sie uns telefonisch für eine schnelle Einschätzung."}
+    },
+    {
+      "@type": "Question",
+      "name": "Fertigen Sie auch Sondermaße an?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, wir schneiden und bearbeiten Glas nach Maß. Bringen Sie die genauen Abmessungen mit oder wir nehmen das Maß vor Ort."}
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Glassorten bieten Sie an?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Wir arbeiten mit Float-Glas, Einscheibensicherheitsglas (ESG), Verbundsicherheitsglas (VSG), Isolierglas, Ornamentglas und weiteren Spezialgläsern."}
+    }
+  ]
+}
+</script>
+
 <!-- =============================================
      HERO
      ============================================= -->

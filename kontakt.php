@@ -15,6 +15,26 @@ include 'includes/header.php';
 $form_error = isset($_GET['error']) ? htmlspecialchars($_GET['error'], ENT_QUOTES, 'UTF-8') : null;
 ?>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://glas-povenz.de/"},
+    {"@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://glas-povenz.de/kontakt.php"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Kontakt – Glaserei Povenz Selb",
+  "url": "https://glas-povenz.de/kontakt.php",
+  "mainEntity": {"@id": "https://glas-povenz.de/#business"}
+}
+</script>
+
 <div class="page-hero">
     <div class="container">
         <span class="label">Kontakt</span>

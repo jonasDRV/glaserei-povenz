@@ -1,4 +1,6 @@
-<footer class="footer">
+</main>
+
+<footer class="footer" role="contentinfo">
     <div class="container">
         <div class="footer__grid">
             <!-- Column 1: Company Info -->

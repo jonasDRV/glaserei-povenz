@@ -33,20 +33,49 @@ $safe_canonical   = htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2a6032">
 
     <title><?= $safe_title ?></title>
     <meta name="description" content="<?= $safe_description ?>">
-    <meta name="robots" content="index, follow">
+
+    <!-- SEO: Robots-Direktiven -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+
+    <!-- SEO: Keywords (niedriges Gewicht, aber für Bing/Yandex relevant) -->
+    <meta name="keywords" content="Glaserei Selb, Glaser Selb, Glasermeister Selb, Fensterglas Selb, Glasreparatur Selb, Glasbruch Selb, Duschkabine Selb, Spiegel Selb, Bleiverglasung, Isolierglas, Wintergarten, Schaufensterverglasung, Glaserei Fichtelgebirge, Glaser Hof, Glaser Rehau, Glaser Marktredwitz, Glasnotdienst Selb, Glasermeister Povenz">
+
+    <!-- SEO: Autor & Geo -->
+    <meta name="author" content="Glaserei Povenz – Andreas Povenz">
+    <meta name="geo.region" content="DE-BY">
+    <meta name="geo.placename" content="Selb, Bayern">
+    <meta name="geo.position" content="50.1667;12.1333">
+    <meta name="ICBM" content="50.1667, 12.1333">
 
     <link rel="canonical" href="<?= $safe_canonical ?>">
 
     <!-- Open Graph -->
+    <meta property="og:site_name"   content="Glaserei Povenz">
     <meta property="og:title"       content="<?= $safe_title ?>">
     <meta property="og:description" content="<?= $safe_description ?>">
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="<?= $safe_canonical ?>">
     <meta property="og:locale"      content="de_DE">
-    <meta property="og:image"       content="https://glas-povenz.de/images/og-image.jpg">
+    <meta property="og:image"       content="https://glas-povenz.de/images/Glaserei-Schaufenster.webp">
+    <meta property="og:image:alt"   content="Glaserei Povenz – Schaufenster in der Talstraße 41, Selb">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="<?= $safe_title ?>">
+    <meta name="twitter:description" content="<?= $safe_description ?>">
+    <meta name="twitter:image"       content="https://glas-povenz.de/images/Glaserei-Schaufenster.webp">
+
+    <!-- Fonts: Preconnect + Link (ersetzt @import — deutlich bessere Performance) -->
+    <!-- GDPR: Self-host before production deployment -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/css/style.css">
@@ -55,6 +84,9 @@ $safe_canonical   = htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8');
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
+
+<!-- Skip-Link für Tastatur-Navigation & Screenreader -->
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
 <!-- Cookie-Banner -->
 <div id="cookieBanner"
@@ -117,3 +149,5 @@ $safe_canonical   = htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8');
 
     </div>
 </nav>
+
+<main id="main-content" role="main" tabindex="-1">

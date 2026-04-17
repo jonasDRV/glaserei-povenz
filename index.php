@@ -7,13 +7,27 @@ include 'includes/header.php';
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://glas-povenz.de",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "GeneralContractor"],
+  "@id": "https://glas-povenz.de/#business",
   "name": "Glaserei Povenz",
-  "description": "Glasermeisterbetrieb in Selb – Fensterglas, Duschkabinen, Spiegel, Wintergärten und mehr.",
+  "legalName": "Glaserei Povenz UG",
+  "alternateName": ["Glaserei Povenz Selb", "Glasermeister Povenz"],
+  "description": "Familiengeführter Glasermeisterbetrieb in Selb – Fensterglas, Glasreparatur, Duschkabinen, Spiegel, Bleiverglasung, Wintergärten, Isolierglas und Schaufensterverglasung im gesamten Fichtelgebirge.",
   "url": "https://glas-povenz.de",
-  "telephone": "+4992874428",
+  "logo": "https://glas-povenz.de/images/logo.png",
+  "image": [
+    "https://glas-povenz.de/images/Glaserei-Schaufenster.webp",
+    "https://glas-povenz.de/images/Laden.webp",
+    "https://glas-povenz.de/images/Bleiverglasung.webp",
+    "https://glas-povenz.de/images/1395224bb4d.webp"
+  ],
+  "telephone": "+49-9287-4428",
   "email": "povenz@t-online.de",
+  "founder": {
+    "@type": "Person",
+    "name": "Andreas Povenz",
+    "jobTitle": "Glasermeister"
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Talstr. 41",
@@ -32,11 +46,113 @@ include 'includes/header.php';
     {"@type": "City", "name": "Rehau"},
     {"@type": "City", "name": "Hof"},
     {"@type": "City", "name": "Marktredwitz"},
-    {"@type": "AdministrativeArea", "name": "Fichtelgebirge"}
+    {"@type": "City", "name": "Wunsiedel"},
+    {"@type": "City", "name": "Arzberg"},
+    {"@type": "City", "name": "Kirchenlamitz"},
+    {"@type": "City", "name": "Münchberg"},
+    {"@type": "City", "name": "Schönwald"},
+    {"@type": "City", "name": "Bad Alexandersbad"},
+    {"@type": "City", "name": "Thiersheim"},
+    {"@type": "City", "name": "Weißenstadt"},
+    {"@type": "City", "name": "Marktleuthen"},
+    {"@type": "City", "name": "Erkersreuth"},
+    {"@type": "AdministrativeArea", "name": "Fichtelgebirge"},
+    {"@type": "AdministrativeArea", "name": "Landkreis Wunsiedel"},
+    {"@type": "AdministrativeArea", "name": "Oberfranken"}
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "12:00"
+    }
   ],
   "openingHours": ["Mo-Fr 08:00-17:00", "Sa 09:00-12:00"],
-  "hasMap": "https://maps.google.com/?q=Glaserei+Povenz+Selb",
-  "priceRange": "€€"
+  "hasMap": "https://maps.google.com/?q=Glaserei+Povenz+Talstr+41+Selb",
+  "priceRange": "€€",
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": ["Cash", "Invoice", "Bank transfer"],
+  "knowsLanguage": "de",
+  "knowsAbout": [
+    "Glaserhandwerk",
+    "Fensterverglasung",
+    "Isolierverglasung",
+    "Sicherheitsglas",
+    "Duschkabinen",
+    "Spiegelzuschnitt",
+    "Bleiverglasung",
+    "Wintergarten-Verglasung",
+    "Schaufensterverglasung",
+    "Glasreparatur",
+    "Glasnotdienst"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "5",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Harald Weber"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "Passgenaue Arbeit, superschnell erledigt, dazu noch sehr nettes Gespräch, was will man mehr?"
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Gerald Nitzl"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "Herr Povenz hat in kurzer Zeit alle Scheiben in unserem EFH ausgetauscht. Alle Termine und Absprachen wurden perfekt eingehalten. Sehr empfehlenswerter Betrieb!"
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Manfred Oppitz"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "Superschnelle Erledigung der Reparatur, gute Arbeit, fairer Preis."
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Leistungen der Glaserei Povenz",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fensterglas & Glasreparatur", "description": "Austausch und Reparatur von Fensterscheiben, auch im Notfall."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Isolierverglasung", "description": "Moderne Isoglas-Einheiten zur Wärmedämmung."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Duschkabinen", "description": "Maßgefertigte Duschkabinen aus Sicherheitsglas."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Spiegel nach Maß", "description": "Spiegel in jeder Größe und Form, auch mit Facettenschliff."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bleiverglasung", "description": "Traditionelle Bleiverglasungen und kunstvolle Glasgestaltung."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wintergärten", "description": "Planung und Verglasung von Wintergärten."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Schaufensterverglasung", "description": "Schaufenster- und Türverglasungen für Gewerbeobjekte."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bilderrahmen-Verglasung", "description": "Verglasung von Bilderrahmen in allen Formaten."}}
+    ]
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+49-9287-4428",
+    "contactType": "customer service",
+    "availableLanguage": "German",
+    "areaServed": "DE"
+  }
+}
+</script>
+
+<!-- BreadcrumbList for homepage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://glas-povenz.de/",
+  "name": "Glaserei Povenz",
+  "inLanguage": "de-DE",
+  "publisher": {"@id": "https://glas-povenz.de/#business"}
 }
 </script>
 
