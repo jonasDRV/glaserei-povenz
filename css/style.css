@@ -1449,7 +1449,62 @@ strong {
 
 
 /* =============================================================================
-   23. RESPONSIVE — MOBILE BREAKPOINTS
+   23. ÜBER UNS — FOTO
+   ============================================================================= */
+
+.ueber-uns__photo {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  display: block;
+}
+
+
+/* =============================================================================
+   24. GALERIE
+   ============================================================================= */
+
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.galerie-item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+.galerie-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.galerie-item:hover img {
+  transform: scale(1.04);
+}
+
+.galerie-item figcaption {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+}
+
+
+/* =============================================================================
+   25. RESPONSIVE — MOBILE BREAKPOINTS
    ============================================================================= */
 
 /* ---- Tablet & below: 768px ---- */
@@ -1567,6 +1622,16 @@ strong {
   .ueber-uns__stats {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* Gallery → 2 col on tablet */
+  .galerie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Über uns photo */
+  .ueber-uns__photo {
+    height: 320px;
+  }
 }
 
 /* ---- Small mobile: 480px ---- */
@@ -1609,6 +1674,15 @@ strong {
   /* Reviews → 1 col */
   .rezensionen-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Gallery → 1 col on small mobile */
+  .galerie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .galerie-item img {
+    height: 240px;
   }
 
   /* Stats → 2 col (already) — reduce padding */

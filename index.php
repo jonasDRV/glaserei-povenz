@@ -43,7 +43,7 @@ include 'includes/header.php';
 <!-- =============================================
      SECTION 1: HERO
      ============================================= -->
-<section class="hero" aria-labelledby="hero-title">
+<section class="hero" aria-labelledby="hero-title" style="background-image: url('/images/Glaserei-Schaufenster.webp');">
     <div class="container">
         <div class="hero__content reveal">
             <h1 class="hero__title" id="hero-title">Ihr Glasermeister<br>aus Selb</h1>
@@ -146,9 +146,10 @@ include 'includes/header.php';
             </div>
 
             <div class="reveal">
-                <div class="ueber-uns__photo-placeholder">
-                    <span>[Foto: Glasermeister bei der Arbeit]</span>
-                </div>
+                <img src="/images/1395224bb4d.webp"
+                     alt="Glasermeister Andreas Povenz in der Werkstatt an der Glasschneidemaschine"
+                     class="ueber-uns__photo"
+                     loading="lazy">
             </div>
 
         </div>
@@ -216,7 +217,48 @@ include 'includes/header.php';
 </section>
 
 <!-- =============================================
-     SECTION 6: STANDORT
+     SECTION 6: GALERIE
+     ============================================= -->
+<section class="section" aria-labelledby="galerie-title">
+    <div class="container">
+        <h2 class="section-title" id="galerie-title">Einblicke in unsere Arbeit</h2>
+
+        <div class="galerie-grid">
+
+            <figure class="galerie-item reveal">
+                <img src="/images/Bleiverglasung.webp"
+                     alt="Kunstvolle Bleiverglasung mit Kutschenmotiv"
+                     loading="lazy">
+                <figcaption>Bleiverglasung</figcaption>
+            </figure>
+
+            <figure class="galerie-item reveal">
+                <img src="/images/Laden.webp"
+                     alt="Innenansicht der Glaserei mit Bilderrahmen und Spiegeln"
+                     loading="lazy">
+                <figcaption>Unser Laden</figcaption>
+            </figure>
+
+            <figure class="galerie-item reveal">
+                <img src="/images/IMG_0614.webp"
+                     alt="Firmenfahrzeug der Glaserei Povenz in Selb"
+                     loading="lazy">
+                <figcaption>Immer für Sie unterwegs</figcaption>
+            </figure>
+
+            <figure class="galerie-item reveal">
+                <img src="/images/Glaserei-Schaufenster.webp"
+                     alt="Außenansicht der Glaserei Povenz, Talstr. 41, Selb"
+                     loading="lazy">
+                <figcaption>Unser Geschäft in Selb</figcaption>
+            </figure>
+
+        </div>
+    </div>
+</section>
+
+<!-- =============================================
+     SECTION 7: STANDORT
      ============================================= -->
 <section class="section" aria-labelledby="standort-title">
     <div class="container">
